@@ -1,30 +1,47 @@
-"use client";
-
-import { useState } from "react";
-
 export default function LandingFix() {
-  const [url, setUrl] = useState("");
-
   return (
-    <main style={{ padding: 40, maxWidth: 700 }}>
-      <h1>LandingFix</h1>
+    <main style={{ maxWidth: "800px", margin: "0 auto", padding: "80px 24px" }}>
+      <h1>Your landing page is leaking conversions.</h1>
 
       <p>
-        Get a fast, brutal audit of your landing page.
+        We analyze your hero section, messaging and structure to show
+        exactly why visitors don’t take action.
       </p>
 
-      <input
-        type="text"
-        placeholder="https://yourlanding.com"
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
-        style={{ width: "100%", marginBottom: 12 }}
-      />
+      <a href="#cta">
+        Fix My Landing Page
+      </a>
 
-      <button>
-        Analyze
-      </button>
+      <p>
+        Instant • No signup • Built for SaaS founders
+      </p>
+
+      <hr style={{ margin: "60px 0" }} />
+
+      <h2>What we grade</h2>
+
+      <ul>
+        <li>Hero clarity (first 5 seconds)</li>
+        <li>Value proposition</li>
+        <li>Call to action</li>
+        <li>Visual hierarchy</li>
+      </ul>
+
+      <hr style={{ margin: "60px 0" }} />
+
+      <section id="cta">
+        <h2>Get an instant landing page grade</h2>
+
+        <a href="#">
+          Analyze My Landing Page
+        </a>
+
+        <p>
+          One-time payment • Actionable insights
+        </p>
+      </section>
     </main>
   );
 }
+
 
