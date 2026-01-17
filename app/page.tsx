@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main style={{ maxWidth: "800px", margin: "0 auto", padding: "80px 24px" }}>
       <h1>
-        We grade what’s killing your conversions.
+        We grade what’s killing your conversions. 
       </h1>
 
       <p>
