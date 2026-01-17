@@ -34,7 +34,7 @@ export default function Home() {
         What is GradeMyOffer?
       </h2>
 
-<a href="/landing-fix">Grade my landing</a>
+<a href="/landingfix">Grade my landing</a>
 
       <p>
         GradeMyOffer is a suite of instant graders that analyze the parts of your business
