@@ -2,11 +2,16 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 function makeId() {
   return (
-    Date.now().toString(36) + Math.random().toString(36).slice(2, 8)
+    Date.now().toString(36) +
+    Math.random().toString(36).slice(2, 8)
   ).toUpperCase();
 }
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  // Permite apenas POST
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ error: "Method Not Allowed" });
@@ -26,15 +31,18 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       input: { url, businessType, goal, traffic },
       version: "v1-mock",
     },
+
     strengths: [
       "Your CTA intent is clear (you are asking the visitor to take one main action).",
       "The page appears to be focused on a single goal (which is already better than most).",
     ],
+
     mainIssue: {
       title: "Message clarity under time pressure",
       explanation:
         "A first-time visitor should understand what you do and who it’s for within ~3 seconds. Right now, the top section likely leaves too much interpretation, which causes hesitation and drop-off.",
     },
+
     fixPlaybook: {
       objective:
         "Make the first screen instantly answer: what this is, who it’s for, and why it matters.",
@@ -67,6 +75,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         "Is there at least one proof element near the CTA?",
       ],
     },
+
     secondaryIssues: [
       {
         title: "CTA specificity",
@@ -85,6 +94,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         ],
       },
     ],
+
     visualIdentity: {
       whatLooksGood:
         "Your visual structure likely supports scanning (clear headline + supporting text + CTA).",
@@ -98,13 +108,16 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         ],
       },
     },
+
     silentIntelligence: {
       benchmark:
         "Compared to similar SaaS landing pages, the biggest opportunity is usually message specificity in the hero. Fixing that first tends to reduce immediate bounce.",
       visitorSimulation:
         "A first-time visitor may think: 'What exactly is this?' → 'Is it for me?' → 'What happens after I click?' Your job is to answer those in the first screen with no guessing.",
     },
+
     score: { clarity: 5, focus: 6, trust: 4 },
+
     followUp: {
       title: "Follow-up review",
       text:
@@ -114,3 +127,4 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   return res.status(200).json({ id, report });
 }
+
