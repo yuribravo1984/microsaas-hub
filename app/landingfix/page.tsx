@@ -1,30 +1,26 @@
-export default function LandingFix() {
+export default function LandingFixPage() {
   return (
-    <main style={{ maxWidth: "800px", margin: "0 auto", padding: "80px 24px" }}>
-      <h1>Your landing page is leaking conversions.</h1>
-      <p>
-        We analyze your hero section, messaging and structure to show exactly why
-        visitors don’t take action.
-      </p>
+    <main className="mx-auto max-w-4xl px-6 py-24">
+      <section className="text-center">
+        <h1 className="text-4xl font-semibold tracking-tight">
+          Not sure why your landing page isn’t converting?
+        </h1>
 
-      <a href="#cta">Fix My Landing Page</a>
+        <p className="mt-6 text-lg text-gray-600">
+          Get a structured landing page diagnosis that tells you exactly what to
+          fix first — and how to fix it.
+        </p>
 
-      <hr style={{ margin: "60px 0" }} />
+        <div className="mt-10">
+          <a
+            href="/landingfix/run"
+            className="inline-block rounded-md bg-black px-8 py-4 text-white text-base font-medium hover:bg-gray-900 transition"
+          >
+            Run the diagnosis
+          </a>
 
-      <h2>What we grade</h2>
-      <ul>
-        <li>Hero clarity (first 5 seconds)</li>
-        <li>Value proposition</li>
-        <li>Call to action</li>
-        <li>Visual hierarchy</li>
-      </ul>
-
-      <hr style={{ margin: "60px 0" }} />
-
-      <section id="cta">
-        <h2>Get an instant landing page grade</h2>
-        <a href="/">Run a Free Grade</a>
-        <p>One-time payment • Actionable insights</p>
+          <p className="mt-3 text-sm text-gray-500">Takes ~2 minutes</p>
+        </div>
       </section>
     </main>
   );
