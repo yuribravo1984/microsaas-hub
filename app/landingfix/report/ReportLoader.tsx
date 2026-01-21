@@ -29,7 +29,8 @@ export default function ReportLoader() {
       }
 
       try {
-        const res = await fetch("/api/landingfix/analyze", {
+        const res = await fetch("/landingfix-analyze", {
+
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
